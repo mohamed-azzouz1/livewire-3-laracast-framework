@@ -1,6 +1,6 @@
 <div>
 
-    <form wire:submit="changeName( )">
+    <form wire:submit="changeGreeting( )">
         <div class="mt-2">
             <select
                 type="text"
@@ -17,6 +17,11 @@
                 class="block w-full p-4 border rounded-md bg-gray-700 text-white"
                 wire:model="name">
         </div>
+        <div>
+            @error('name')
+            {{ $message }}
+            @enderror
+        </div>
         <div class="mt-2">
             <button
                 type="submit"
@@ -25,9 +30,9 @@
             </button>
         </div>
     </form>
-    @if ($name != '')
+    @if ($greetingmessage != '')
     <div class="mt-5">
-    {{$greeting}}, {{ $name }}!
+        {{ $greetingmessage}}
     </div>
     @endif
 </div>
