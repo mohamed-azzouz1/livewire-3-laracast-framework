@@ -8,7 +8,7 @@
                 placeholder="type something to search"
             >
 
-            <button class="text-white font-medium rounded-md p-4 disabled:bg-indigo-400 bg-indigo-600"
+            <button class="text-white font-medium rounded-md p-4 disabled:bg-indigo-300 bg-indigo-600"
                 wire:click.prevent="clear()"
                 {{ empty($searchText) ? 'disabled' : '' }}
             >
@@ -19,7 +19,7 @@
     <div class="mt-4">
         @foreach($results as $result)
         <div class="pt-2">
-            {{$result->title}}
+        <a href="/articles/{{$result->id}}">{{$result->title}}</a>
         </div>
         @endforeach
     </div>

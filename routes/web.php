@@ -1,11 +1,16 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Livewire\Search;
+use App\Livewire\ShowArticle;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+route::get('/search', Search::class);
+route::get('/article/{article}', ShowArticle::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
